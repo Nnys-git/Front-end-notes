@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+            width:300px;
+            height:300px;
+        }
+
+        .bold{
+            font-weight: bolder;
+        }
+
+        .blue{
+            background-color: blue;
+            width:150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="red">
+    <div class="blue">
+    </div>
+</div>
+<script>
+    //Event Bubbling
+    let red = document.querySelector("div.red");
+    let blue = document.querySelector("div.blue");
+
+    red.addEventListener("click", (e)=>{
+        window.alert("你觸發了外層紅色的click事件");
+    })
+
+    blue.addEventListener("click",(e)=>{
+        window.alert("你觸發了內層藍色的click事件");
+    })
+    /**
+    當你在點選內層的blue方塊時，blue方塊的click事件會先觸發，
+    再來因為Event Bubbling(bubble up)的關係，在blue方塊外層(母元素)的red方塊
+    也會跟著被觸發，這就是Event Bubbling!
+    當你一個網站裡的addEventListener越來越多的時候，就越是要注意bubble up的問題
+    */
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+// some(),  every() 裡面要放一個條件式! 
+const fruit =[
+{name:"apple",sweet:8.5,popularity:9},
+{name:"banana",sweet:6,popularity:7},
+{name:"mango",sweet:9,popularity:10},
+{name:"orange",sweet:7,popularity:9},
+];
+// some()、every()  returns a boolean value
+// some() 是只要有一個符合就回傳true
+let result = fruit.some(fruit=>{
+    return fruit.sweet>7;
+});
+console.log(result);
+
+// some() 是每一個都符合就回傳true
+let result2 = fruit.every(fruit=>{
+    return fruit.sweet>8;
+});
+console.log(result2);
+
+
+</script>
+</body>
+</html>

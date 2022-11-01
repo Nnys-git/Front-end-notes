@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <div id="app">
+        {{message}}
+        {{score*0.6}}
+
+    </div>
+
+    <div class="button">
+        button
+    </div>
+    
+    <script>
+        //要先生成一個vue物件，找到要綁定的元素(el)，透過data將資料綁定在其中
+        var app=new Vue({  
+            //<<這邊的新物件一定是寫Vue這三個字否則vue看不懂>>
+            //先找到el element
+            el:'#app',
+            //可以用# 對應id ; 也可以用. 對應class
+            //template 樣板
+            //amgular、react、vue都是以數據軀動內容
+            //你在console輸入app.message="qq" 他網頁會再渲染成qq
+            data:{ 
+                //在html中是以{{名稱}}作呈現，如上，名稱可以隨意改
+                //只要跟html標籤中寫的名稱有對應到即可
+                message:'MDFK!!!',
+                score: 60,
+            }
+        });
+
+    
+    </script>
+    
+</body>
+</html>

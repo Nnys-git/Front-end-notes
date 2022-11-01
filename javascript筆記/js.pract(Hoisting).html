@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+//程式碼執行前，執行環境會先把你的電腦記憶體配給
+//1. function declaration  2. var variable
+
+console.log(x); //undefined
+//照理說程式從上到下進行，為什麼電腦會知道有一個variables叫做x
+//這個x variables也還沒有被assignment?
+//答案就是Hoisting 
+var x = 10 ; 
+//程式碼執行前，JS就先找到這個var variable，並且先放在電腦的記憶體中
+//所以在上面那行log的結果才會是undefined 
+
+
+//function declaration也是一樣
+sayHi(); //Hi
+function sayHi(){
+    console.log("Hi");
+}
+//程式碼執行前，JS就先找到這個function declaration，並且先放在電腦的記憶體中
+//比較
+
+console.log(num1);
+//Uncaught ReferenceError: can't access lexical declaration 'num1' before initialization
+console.log(num2);
+let num1 =20;
+const num2 = 30;
+//不管你是使用let 還是const 去給他試著hoisting
+//但Hoistion本身就不會先對let、const variables進行先行記憶
+//結果就會是Uncaught ReferenceError: can't access lexical declaration 
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // var a="9"*"9";
+    // console.log(a);
+    // 注意: 這樣a會是81 
+
+
+// var num = 2;
+// function numChange(){
+//     var num=3; //區域變數使用var賦值不改變全域變數，但如果你沒寫var 答案就是3了
+// }
+// numChange();
+// console.log(num);  
+// 注意:這邊log的num是全域變數的
+// 注意:這樣出來的結果會是2
+
+
+var num;
+        console.log(num);
+
+        // var str ='test' box='box';
+        // console.log(str);
+
+      var str=123==="123";
+      //注意 絕對參照是===  相對參照是==
+      //絕對參照定義: 比較值，也比較型別
+      //相對參照定義: 只比較值，不比較型別
+      console.log(str);
+
+    
+    // function numChange(){
+    //     var n =2;
+    // }
+    // numChange();
+    // console.log(n); //因為是在區域內用var賦值，所以在全域找不到n這個東西
+    // //注意 這樣的console.log會跳pract1.html:48 Uncaught ReferenceError: n is not defined
+ 
+    // var num=a(4,5); 先宣告變數num為一個function a 在帶入引入4,5
+    // function a(n1,n2){
+    //     return n1+n2;
+    // }
+    // console.log(num);
+    // 注意  這個的答案還是9
+
+    // var price=100;
+    // function sales(money){
+    //     var thisPrice = money*0.8;
+    //     var total= c(thisPrice);
+    //     var d=c();    區域變數內根本看不到c()是三小阿!!
+    //     console.log(total);
+    // }
+    // function c(){
+    //     return price - 30;
+    // }
+    // sales(price); 呼叫sales函數，引數帶入price
+
+    // // 注意  這個的答案應該是syntex error
+
+    var obj={
+        str:'hello',
+        str:'hi'
+    }
+    console.log(obj.str)
+    // 注意  這樣的結果會是hi 因為str這個value被重複宣告了!! 
+
+
+    // var home={
+    //     father:'Tom',
+    //     checkLock: function(){
+    //         console.log('lock');
+    //     }
+    // }
+    // home.checkLock();
+    // 他在value中將值寫成匿名函數
+    // 注意: 這樣會顯示lock出來喔!!!
+
+    // var farm={
+    //     chick:1
+    // }
+    // farm.chick+=1;
+    // console.log(farm.chick);
+
+    eggs=[1,2,3]
+    console.log(eggs.length)
+    </script>
+</body>
+</html>

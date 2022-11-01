@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ejs就是在寫html!! -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJS範例頁面</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <h1>Common Programming Languages</h1>
+    <table>
+      <!--先做個首列-->
+      <tr>
+        <th>name</th>
+        <th>rating</th>
+        <th>popularity</th>
+        <th>trending</th>
+      </tr>
+      <br />
+      <br />
+      <!--內容就靠loop去一一填上-->
+      <%lang.forEach((e)=>{%> <%console.log(e)%>
+      <!--log結果如下-->
+      <!---{ name: 'Python', rating: 9.5, popularity: 9.7, trending: 'super hot' }
+              { name: 'Java', rating: 8.6, popularity: 8.2, trending: 'same' }
+              { name: 'C++', rating: 6.6, popularity: 7.7, trending: 'same' }
+              { name: 'PHP', rating: 2.5, popularity: 4.7, trending: 'decreasing' }
+              { name: 'JavaScript', rating: 8.5, popularity: 8.1, trending: 'same' }-->
+      <tr>
+        <td><%=e.name%></td>
+        <td><%=e.rating%></td>
+        <td><%=e.popularity%></td>
+        <td><%=e.trending%></td>
+      </tr>
+      <% });%>
+    </table>
+  </body>
+</html>

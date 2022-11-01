@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+
+        .bold{
+            font-weight: bolder;
+        }
+
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+   <a href="https://www.youtube.com/">youtube</a>
+<script>
+    /**
+     * Object  all have  
+所有物件都有包含
+> properties  >>in another way >> attributes
+屬性 英文中有另一個講法叫做attributes  但都指一樣的東西
+> methods    >>in another way >> functions
+方法  英文中有另一個講法叫做functions  但都指一樣的東西
+getAttribute()
+this method returns tag element's  attributes (properties) value 
+也就是獲得屬性值的意思
+*/
+//getAttribute()
+
+let tag = document.querySelector("a");
+console.log(tag.getAttribute("href"));
+//回傳https://www.youtube.com/
+
+</script>
+</body>
+</html>

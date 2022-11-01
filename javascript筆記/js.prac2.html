@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">content</div>
+    <script>
+        var ele = document.getElementById("demo");
+        // 當你要var一個變數的時候，開頭"不能是數字"(大小寫英文、底線、$都是可以作為開頭的變數)
+        // document 指的是Dom中的D，指的是整個元素樹 DOM Document Object Model
+        // 你要設一個變數時 前面var可以省略!! 
+        // getElementById指的是找到標籤中id為demo的標籤
+        ele.innerHTML="<h1>Hello</h1>";
+        // innerHTML可以讓標籤內容去做更改
+        ele.innerHTML+="<h2>javascript</h2>"
+
+        a=100
+        console.log(a)
+        //這樣會在console印出的值=100
+        console.log("a="+a)
+        //要讓console印出字串加上值的時候，要將字串雙引號包覆
+        //並且以+連結
+        //cf:python的print是以,連結
+        //如果要在body上面印出內容 要用innerHTML 
+        // 或者使用document.write()
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+/**scope 有三種types:
+1. Global scope (var,let,const三者去定義都可以global scope)
+2. Function scope (var,let,const三者都有function scope)
+3. Block scope (let,const都有block scope; 但var沒有!!!!)
+*/
+
+//global scope
+let myName = "Johnny Lin";
+function sayHi(){
+    let myName= "Tom"; //你在這個function範圍re-declaration
+    console.log(myName+" says hi!");
+    function sayHi2(){
+        console.log(myName +" says goodmorning")
+    }
+    sayHi2();
+}
+sayHi();
+// sayHi(); //出來的結果會是新的Tom says Hi!
+// sayHi2(); //Uncaught ReferenceError: sayHi2 is not defined
+//沒辦法執行sayHi2()的原因在於它的Scope 是屬於function scope function外就找不到了
+//上面的let myName = "Johnny Lin"; 就是屬於Global scope不管在哪都抓的到!
+
+//function scope
+//if a variable has function scope ,then it can only be seen inside the function
+//it has no meaning outside the function
+function say(){
+    let name2 = "Johnny";
+    console.log(name2);
+}
+say(); //很一般的回傳Johnny
+// console.log(name2);//Uncaught ReferenceError: name2 is not defined
+//因為let這個variable擁有function scope 
+//如果let他被assign在一個function裡面的話，他的scope就僅限於在function內才看得到
+//var, const也是有function scope 
+
+//block scope
+//a variable that has block scope means
+//it can only be seen inside a loop or a if statement
+
+if(true){
+    let x=10;
+    console.log(`inside the loop x = ${x}`);//10
+}
+console.log(`outside the loop x = ${x}`); //Uncaught ReferenceError: x is not defined
+// 跟function scope相像，你assign在if , for loop裡面的variable只有裡面能看到
+//【注意】let,const變數有block scope; 但是var沒有!!!
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <!--Template HTML with SEO & Bootstarp-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Johnny Lin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="網頁簡短描述" />
+    <meta name="keywords" content="網頁關鍵字" />
+    <meta name="copyright" content="網頁版權" />
+    <meta name="distribution" content="網頁發佈地區" />
+    <meta name="language " content="網頁發佈語言" />
+    <title>範例頁面</title>
+  </head>
+  <body>
+<script>
+  // Object>> property, method, this, typeOf 
+  // In JS {} used to declare the Object
+  // In JS [] used to declare the Array
+    let Johnny = {
+      //properties declaration
+      first_name:"Johnny",
+      last_name:"Lin",
+      age:"30",
+      body:"fat",
+      //method declaration
+      sayHi(){
+        console.log("Johnny say Hi!")
+      },
+      walk(){
+        console.log("Johnny walking~")
+      },
+      say(word){
+        console.log("Johnny cried out and said "+word+" loudly.")
+      },
+      sayAge(){
+        console.log("Johnny says I'm "+this.age+" years old." )
+        //in this code "this" represent the object called Johnny
+        //also "this" can be dotnotation to call the Object value 
+      }
+    }
+    //use name(property name)+[] call the Object value 
+    console.log(Johnny["age"]);
+    //use . dotnotation to call the Object value
+    console.log(Johnny.body);
+    //invoke/execute the method in Object
+    Johnny.sayHi();
+    Johnny.walk();
+    //also we can put some parameter in method
+    Johnny.say("WTF");
+    
+    //"this" refers to the Object that is calling the method
+    //otherwise, it refers to the window object(DOM).
+    //this這個字指的是物件 Johnny
+    Johnny.age=35; //假如你在invoke sayAge() 之前先宣告age=35; 答案就會變為35
+    Johnny.sayAge();
+    //array is a special type of Object
+</script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 陣列物件 -->
+    <div id="app"></div>
+    <script>
+        var cars={ //這邊的左手邊都稱之為屬性
+            brand:'Honda',
+            oil:'500c.c',
+            color:'white',
+            'max speed':250,//如果你的屬性是兩個字稱呼的，必須要單/雙引號包覆
+            print: function(){ 
+                return `${this.brand},${this.oil},${this.color},${this['max speed']}`
+            } //你也可以定義一個屬性名稱，值給function    
+            //這邊的this指的就是原物件cars
+                //一般抓取物件的值就使用  物件.屬性  如上: this.color
+                //但是如果這個屬性是兩個字合成的，要call時就得用中括弧搭單/雙引號 [""]   如上: this['max speed']
+        }
+        // console.log(cars); //印出全部陣列物件內容
+        // console.log(cars.brand); //印出單獨屬性對應的值
+        // console.log(cars['max speed']); //印出單獨屬性對應的值
+        // console.log(cars.print()); //函數名稱+()代表函數呼叫，要列印return值可以這麼做 
+        // document.write(cars); //注意: 這樣只會印出[object Object]
+
+        // 如果要一次印出所有屬性跟屬性值，要透過for迴圈去遍歷才可以!!
+        // for a in b 把b陣列所有內容一筆一筆帶入a
+        for (var val in cars){
+            // document.write(val);//但光這樣只會印出屬性，沒有屬性值
+            // document.write(cars["max speed"]);//中括弧包雙引號，會印出該屬性值
+            // document.write(cars[val]); //但如果是中括弧不包雙引號，就會印出變數對應的屬性值
+            document.write(`<li>${val} : ${cars[val]}</li>`); //${val}印出key  ${cars[val]}印出value
+        }
+
+
+    </script>
+</body>
+</html>

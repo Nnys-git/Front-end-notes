@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    a{
+        text-decoration:none; /*去底線*/
+        font-size: 3rem; /*文字大小*/
+        color:cornflowerblue; /*文字顏色*/
+    }
+
+    div{
+        transition:all 2s ease;
+    }
+</style>
+</head>
+<body>
+    <input type="text">
+    <button type="submit">SUBMIT</button>
+<a>
+    //When you let object.style(dot notation) ,it will return all the cascade styleing sheet you can declare
+    //Also you can declare the CSS with this style method
+</a>
+<script>
+    // Style
+    let mybt=document.querySelector("button");
+    console.log(mybt.style); //return: CSS2Properties(0)
+    //When you let object.style(dot notation) ,it will return all the cascade styleing sheet you can declare
+    //Also you can declare the CSS with this style method
+    console.log(typeof mybt.style); 
+    // mybt.style.backgroundColor="lightblue"; <--記得JS裡面用dot notation時要用駝峰字，不能用"-"(JS會當成減號)
+    // mybt.style.color="purple"; <--注意: 這些都是inline styleing, 會蓋過所有css設定 
+    mybt.style = "background-color:lightblue; color:white;";
+    //也可以寫成上述的樣子，裡面的寫法就按照一般CSS寫法即可!!
+    //中間不用逗號，但是每個屬性設定都要加上;
+</script>
+</body>
+</html>

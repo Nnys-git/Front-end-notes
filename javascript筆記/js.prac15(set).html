@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 資料結構 -->
+    <!-- js的資料結構常見的有: 
+    Array(陣列)、Set(集合)、Map -->
+    <script>
+        let instruments = new Set(); //直接暴力new一個 set
+
+        instruments.add('piano'); //add來增加set的值
+        instruments.has('guitar'); // false
+        instruments.add('drum');
+        instruments.delete('guitar'); // 裡面根本沒有 guitar 所以回傳 false
+        instruments.size; // 2
+        [...instruments] //['piano', 'drum']
+        console.log(instruments);
+        console.log(instruments.has('piano'));
+        
+
+
+
+    </script>
+</body>
+
+</html>

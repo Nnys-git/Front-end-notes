@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+    //Local Storage、Session Storage => 都是window object底下的object
+    //Local Storage存在使用者點腦中簡單的數據!!【注意: 只能是string!】
+    //Session Storage佔存在瀏覽器上的資料
+    //Local Storage、Session Storage 她們資料儲存的形式都是key : value  ex: "name" : "Johnny"【注意: key跟value都只能是string!】
+    console.log(window.localStorage);
+    /**Storage { length: 0 }
+    length: 0
+    <entries>
+    <prototype>: StoragePrototype { key: key(), getItem: getItem(), setItem: setItem(), … }*/
+    console.log(typeof window.localStorage);//object 同樣Session Storage也是一個object
+    
+
+</script>
+</body>
+</html>

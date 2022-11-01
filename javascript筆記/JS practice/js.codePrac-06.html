@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <!--Template HTML with SEO & Bootstarp-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Johnny Lin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="網頁簡短描述" />
+    <meta name="keywords" content="網頁關鍵字" />
+    <meta name="copyright" content="網頁版權" />
+    <meta name="distribution" content="網頁發佈地區" />
+    <meta name="language " content="網頁發佈語言" />
+    <title>範例頁面</title>
+  </head>
+  <body>
+    <script>
+      // Write a function called "position" that prints out the first uppercase letter and its index location. If not found, prints -1.
+      function position(word){
+        for(let i=0;i<word.length;i++){
+          // console.log(word[i]);
+          if(word[i]==word[i].toUpperCase()){
+            return word[i]+" "+i;
+          }
+        }
+        return -1; //如果都沒有小寫時在for遍歷完之後在return!
+      }
+      console.log(position("abcd"));
+      console.log(position("AbcD"));
+      console.log(position("abCD"));
+    </script>
+  </body>
+</html>

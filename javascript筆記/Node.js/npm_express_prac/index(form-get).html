@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <!--Template HTML with SEO & Bootstarp-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Johnny Lin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="網頁簡短描述" />
+    <meta name="keywords" content="網頁關鍵字" />
+    <meta name="copyright" content="網頁版權" />
+    <meta name="distribution" content="網頁發佈地區" />
+    <meta name="language " content="網頁發佈語言" />
+    <title>Testing</title>
+    <link rel="stylesheet" href="styles/style.css"> 
+    <!--注意 你如果要把這個HTML檔放上express.js伺服器，JS要先設定middleware-->
+    <!--middleware(app.use(express.static("public")))-->
+    <!--這代表有關這個html檔要引用的資料都必須放進public這個資料夾內(包含css)-->
+    <!--在public/styles檔案設定好scss之後，html這邊的路徑也要跟著改-->
+    <!--路徑改成 href="styles/style.css" 雖然html這邊ctrl+左鍵下去會跳找不到.css-->
+    <!--但是app.js那邊才吃得到-->
+  </head>
+  <body>
+    <h1>this is homepage</h1>
+ </body>
+</html>

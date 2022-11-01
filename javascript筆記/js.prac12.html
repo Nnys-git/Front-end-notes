@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'java script'; //<--這樣叫做字串變數
+        console.log(typeof str); //會回傳他是一個String 字串
+        let str2 = new String ("Coca-Cola"); //<--這樣叫字串物件
+        console.log(typeof str2); //會回傳他是一個Object 物件
+
+        // 原生事件
+        console.log(str2.charAt(2));//charAt會抓索引(index從0開始，從左到右012345)
+        console.log(str2.indexOf("c"));// 2 //回傳對應字母的index (如果找步道的話會回傳-1)
+        console.log(str2.substr(6,4));//ola //取子字串substr(start[index],length[取幾位])
+        console.log(str2.substr(5));//Cola //省略length會取到底!
+        //注意:substr跟substring不一樣喔
+        console.log(str2.substring(0,3));//Coc 
+        //取子字串substring(start[index],end[index]) 從startindex取到endindex但不包含endindex本身
+        console.log(str2.slice(0,3));//Coc  跟substring一樣
+        var strArray=str.split(" ");//分割split([separator告訴他要分隔的符號是啥],[limit])
+        console.log(strArray);//這邊回傳的是字串陣列        
+</script>
+</body>
+</html>

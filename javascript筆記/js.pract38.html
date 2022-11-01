@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+
+        .bold{
+            font-weight: bolder;
+        }
+
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <p class="red">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque facere, sequi optio architecto at laborum. Blanditiis aperiam neque reprehenderit reiciendis!</p>
+    <p class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tempora recusandae, in debitis sit quo suscipit expedita hic autem temporibus.</p>
+
+</section>
+    <p class="red">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, sint.</p>
+<script>
+    //document object call the p tag
+let redP = document.querySelectorAll("p.red");
+console.log(redP); //NodeList(3) [ p.red, p.red, p.red ]
+    //對document來說，所有body下面的元素都是他的子元素
+    //所以在做document.querySelectorAll的時候，會整個document都去找
+    //others HTML element object querySelectorAll()
+let section = document.querySelector("section");  //選到section這個tag
+let ele_redP = section.querySelectorAll("p.red");
+console.log(ele_redP); //NodeList [ p.red, p.red ]
+    //但相對於section來說，他的子元素只有section tag裡面的所有元素
+    //所以在做section.querySelectorAll的時候，只會以它下面的子元素作為搜尋範圍
+</script>
+</body>
+</html>

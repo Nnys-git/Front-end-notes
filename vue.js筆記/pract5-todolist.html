@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <div class="app">
+        <input type="text" placeholder="請輸入代辦事項" @keyup.enter="addTodo(newTodo)" v-model="newTodo">
+    
+    <h2>事項列表</h2>
+    <ul>
+        <li v-for="todo in todos">
+
+            {{todo.content}}
+            -<a href="#" @click.prevent= "removeTodo(todo)" >刪除</a>
+        </li>
+    </ul>
+</div>
+    <script>
+        var app =new Vue({
+            el: '.app',
+            data:{
+                todos:[], //會由上面的v-for來不斷的倒出資料
+                newTodo:''//透過v-model 將使用者輸入的資訊自動帶入這邊的newTodo變數值
+            },
+            methods:{
+                addTodo: function(todo){
+                    this.todos.push({content:todo,completed: false}) //在vue裡面的this強制代表著data
+                },  //不能直接用todos(會抓不到變數)
+                //這邊的push是將資料新增到data中
+                removeTodo: function(todo){
+                    this.todos.splice(this.todos.indexOf(todo),1);
+                }
+            }
+
+        })
+
+    </script>
+</body>
+</html>

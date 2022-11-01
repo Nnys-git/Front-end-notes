@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+
+        .bold{
+            font-weight: bolder;
+        }
+
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam labore quos tempore iste possimus quisquam commodi eos dolor eum necessitatibus.</p>
+<script>
+    //classList return tag element class 
+    let myP = document.querySelector("p");
+    console.log(myP.classList);
+/**
+ * classList 是一個object 妳可以用typeof確認之
+ * classList 一個tag可能有好幾個class， classList will return 
+ * all of your class in a DOMTokenList, in that list, you'll
+ * see varius of 屬性 0,1,index,length 這幾的都可以透過dot notation去呼叫  
+ * 除此之外classList還有幾個method可以使用 add(),remove(),toggle(),contains()
+*/
+    //classList method:
+    //add(),remove(),toggle(),contains()
+    myP.classList.add("red","bold"); //新增class
+    myP.classList.remove("red"); //刪除class
+    myP.classList.toggle("blue"); //有>刪除class; 沒>新增class
+    console.log(myP.classList.contains("blue")); //有>回傳true; 沒>回傳false
+</script>
+</body>
+</html>

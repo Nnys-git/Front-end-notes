@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="hi">{{message}}</div>
+        <div v-if="loading">訊息讀取錯誤</div>
+        <!-- vue中的if判斷式是以v-if來表示，後面加上布林值做判斷依據 -->
+        <div v-show="loading">訊息讀取錯誤</div>
+        <!-- 用v-show也可以來做為標籤內容是否隱藏的依據 -->
+        <!-- 兩者不同在於 -->
+        <!-- v-show=false時，標籤還會在，但是會自動新增display:none; -->
+        <!-- v-if=false時，整個標籤都不見 -->
+        <!-- 相對於v-if ;有個叫做v-else的功能 -->
+    </div>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <script>
+        var app= new Vue({
+            el:'#app',
+            data:{
+                message:'Hello world!',
+                loading: false 
+                // true才會顯示整個標籤，否則會整個標籤不見
+            }
+        });
+    </script> 
+</body>
+</html>

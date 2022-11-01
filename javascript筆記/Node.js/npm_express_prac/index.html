@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <!--Template HTML with SEO & Bootstarp-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Johnny Lin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="網頁簡短描述" />
+    <meta name="keywords" content="網頁關鍵字" />
+    <meta name="copyright" content="網頁版權" />
+    <meta name="distribution" content="網頁發佈地區" />
+    <meta name="language " content="網頁發佈語言" />
+    <title>Testing</title>
+
+  </head>
+  <body>
+    <form action="/formHandling" method="POST">
+      <!--form 這邊的action就要跟你routing有一樣名稱; method 不管是哪一種http request都要寫大寫--> 
+      <label for="fullname">Your name:</label>
+      <input type="text" id="fullname" name="fullname"> 
+      <!--務必記得只有input裡面 property有name的tag才會回傳!!-->
+      <label for="age">Your age:</label>
+      <input type="text" id="age" name="age">
+      <button type="summit">Summit</button>
+    </form>
+ </body>
+</html>

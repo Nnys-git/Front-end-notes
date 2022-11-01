@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="message">
+        <!-- 單行文字輸入資料時會同步修改data -->
+        <!-- v-model指的是可以動態修改DATA裡面的資料 -->
+        <div class="hi">台幣{{message}}
+            美金{{message*1/30}}
+            日幣{{message*0.25}}
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <script>
+        var app =new Vue({
+            el:'#app',
+            data:{
+                message:'MDFK!!'
+            }
+        })
+
+    </script>
+</body>
+</html>

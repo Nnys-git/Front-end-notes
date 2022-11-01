@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid practice</title>
+    <style>
+        .grid-container{
+            display:grid;
+            background:lightgoldenrodyellow;
+            /* 在這邊的template將給定這個grid表格你所想要的樣子
+            (col:行(垂直)設定的數值會變成grid寬度[無設定高度時grid高為內容高度，同一列的高度會相同])
+            (row:列(水平)設定的數值會變成grid高度[無設定寬度時grid寬會自動延展]) 
+            (你設幾個數值進去(包含repeat)他就會有幾行/列，超過的div會"換行") */
+            grid-template-columns: 100px repeat(2,250px);
+            /* grid-auto-rows: 200px; */
+            grid-auto-rows:minmax(150px,auto); 
+            /* 搭配auto rows會讓整個grid都呈現3行(上面定義3個寬度),後續再新增div都會遵循3行，
+            列高度都是200px(也可以設成minmax(150px,auto)這樣一來整個量高最小值為150px)  
+            最大值會隨著字元變化。*/
+            /* grid-template-rows:repeat(3,200px); */
+            grid-gap:20px;
+            /* grid-column-gap:50px; */
+            /* grid-row-gap: 40px; */
+            /* grid-gap可以實現各個grid之間的間距(也可以個別設定grid-row-gap/grid-column-gap) */
+            grid-area:wrap;
+        }
+        .grid-item{
+            background:lightblue;
+            border: 2px dashed black;
+        }
+        .g1-1{
+            grid-
+        }
+        .g1-2{
+
+        }
+        .g1-3{
+
+        }
+        .g1-4{
+
+        }
+        .g1-5{
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 用GRID起手勢都是一個GRID-CONTAINER DIV作包覆 -->
+    <!-- 並且將這個container以display:grid來做css屬性加掛 -->
+    <div class="grid-container">
+        <!-- 想要快速生成文字卻不想打一堆字，可以用Lorem 加上數字，就會自動生成對應數字的單字 -->
+        <div class="grid-item gi-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quaerat.</div>
+        <div class="grid-item gi-2">gridcont2</div>
+        <div class="grid-item gi-3">gridcont3</div>
+        <div class="grid-item gi-4">gridcont4</div>
+        <div class="grid-item gi-5">gridcont5</div>
+        <div class="grid-item gi-6">gridcont6</div>
+        <div class="grid-item gi-7">gridcont7</div>
+        <div class="grid-item gi-8">gridcont8</div>
+        <div class="grid-item gi-9">gridcont9</div>
+        <div class="grid-item gi-10">gridcont10</div>
+
+    </div>
+</body>
+</html>

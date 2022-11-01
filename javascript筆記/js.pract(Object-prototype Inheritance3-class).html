@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //prototypeInheritance  跟下面的class有一樣的效果
+      // function Person(name,age,height,weight){
+      //   this.name = name,
+      //   this.age = age,
+      //   this.height = height,
+      //   this.weight = weight
+      // }
+
+      // Person.prototype.sayHi = function(){
+      //   console.log(this.name+" says Hi.");
+      // }
+
+      // Person.prototype.intro = function(){
+      //   console.log("Hi, my name is "+this.name);
+      // }
+
+      //syntactical suger語法糖-class
+      //先從Person開始
+      class Person{
+        //對應上面的constructor function
+        constructor(name,age,height,weight){
+          this.name = name,
+          this.age = age,
+          this.height = height,
+          this.weight = weight
+        }
+        //對應上面的Person.prototype
+        sayHi(){
+          console.log(this.name+" says Hi.");
+        }
+        intro(){
+          console.log("Hi, my name is "+this.name);
+        }
+      }
+
+      let Tom = new Person("Tom Lin",30,176,80);
+      console.log(Tom);
+      //你會看到這樣出來的object跟上面的有一樣的效果
+      //prototype: sayHi,intro也都有順利繼承到
+
+
+      //syntactical suger語法糖-class
+      //再改Student
+      // function Student(name,age,height,weight,major,grade){
+      //     Person.call(this,name,age,height,weight);
+      //     this.major = major;
+      //     this.grade = grade;
+      // }
+      // Student.prototype = Object.create(Person.prototype);
+      // let Johnny = new Student("Johnny Lin",30,176,80,"國語",2);
+      // console.log(Johnny);
+      // Johnny.sayHi();
+
+      class Student extends Person{ //寫extends Person代表著你告訴JS你要繼承Person
+        constructor(name,age,height,weight,major,grade){
+          super(name,age,height,weight);//有上面的extend 這邊就可以直接用super()
+          //注意: super裡面不用this
+          this.major = major;
+          this.grade = grade;
+        }
+        study(){
+          console.log("Hi I'm studying.")
+        }
+      }
+      let Johnny = new Student("Johnny Lin",30,176,80,"國語",2);
+      console.log(Johnny);
+      Johnny.study(); //一樣可以另外新增prototype method 
+
+ </script>
+  </body>
+</html>

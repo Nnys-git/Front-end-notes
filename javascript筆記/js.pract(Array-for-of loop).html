@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+//for of loop 用來增加code可閱讀性
+//這樣的語法創造一個可以循環的物件ex: String Array array-like strings NodeList
+let numbers = [10,20,30];
+// 遍歷Array串列的方法(loop through array 101)
+//1. for loop
+for(let i=0;i<numbers.length;i++){
+    // console.log(numbers[i]);
+} 
+//2. forEach() method 下面這個有更好的可閱讀性
+numbers.forEach(n => {
+    // console.log(n);
+});
+
+//3. for of loop  下面這個有最佳的可閱讀性
+for(let n of numbers){  //可以清楚的知道是將numbers的元素一個一個帶入n
+    // console.log(n); //注意: fro of loop 只能用在iterible object: String、Array、array-like strings、NodeList
+    console.log(numbers[n]);
+}
+
+let name = "Apple"; //String 算是iterible object
+for (let n of name){
+    // console.log(n); //可順利log
+}
+
+let a = {
+    name:"Apple"
+}
+for (let n of a){  //在這邊的a是一個object所以不能用for of loop
+    // console.log(n);
+}//Uncaught TypeError: a is not iterable
+</script>
+</body>
+</html>

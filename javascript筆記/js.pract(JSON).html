@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+    // let friends = ["Sam","Tom","Amy"];
+    // 先將array透過JSON.stringify()轉換成string放進value值，存放在localStorage內【進去的東西就不會被搞】
+    // localStorage.setItem("friends",JSON.stringify(friends));
+    //之後用getItem將這個value取出來，取出來的東西是JSON.stringify過的string
+    //所以我們要再透過JSON.parse() 來將資料再轉換回array
+    let myfriends_refresh = JSON.parse( localStorage.getItem("friends"));
+    console.log(myfriends_refresh); 
+    // 又會變回一個原本的array
+    // 進去的東西其實不限資料類別(進去的是object number boolean進去都可以!!)
+</script>
+</body>
+</html>

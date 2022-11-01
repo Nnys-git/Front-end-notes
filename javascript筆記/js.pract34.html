@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myH1"></h1>
+   
+<script>
+    //innerHTML, innerText
+    let h1 = document.querySelector("h1#myH1");
+    console.log(h1); //>會印出h1 tag  打開來看它的property會看到innerTHML,innerText都是empty string
+    h1.innerHTML="Hi I'm Johnny"//透過querySelector找到tag之後再針對這個tag element的屬性 innerHTML做輸入
+    //要在JS特別這樣控制的原因是可以隨時隨使用者不同去做動態修改
+    h1.innerText="Hi I'm Johnny(innerText)"
+ </script>
+</body>
+</html>

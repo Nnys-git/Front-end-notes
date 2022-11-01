@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //forEach function takes one parameter : 但這邊的parameter是一個function
+        //遍歷陣列的另一個方法(元方法是用for loop)
+        let arr = [7,15,23,66,91,10,13];
+        // forEach function with function declaration
+        // arr.forEach(function checkNum(n){
+        //     if(n>20){
+        //         console.log(n);
+        //     }
+        // });
+        
+        // forEach function with arrow function 
+        // arr.forEach((n)=>{
+        //     if(n>20){
+        //         console.log(n);
+        //     }
+        // });
+
+        //Also, you can put multiple parameter in "CallBack function"
+        // 前面的n指的是是forEach在array裡面遍歷的每一個value
+        // 後面的index指的是符合條件的value所在的index 
+        arr.forEach((n,index,array)=>{
+            if(n>20){
+                console.log(n);
+                console.log("The number "+ n + " is index at "+ index);
+                console.log(array);
+            }
+        });
+
+        
+ </script>
+</body>
+</html>

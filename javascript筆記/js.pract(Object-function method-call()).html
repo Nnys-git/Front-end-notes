@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //function methods
+      //bind call apply
+      let Johnny = {
+        name:"Johnny Lin",
+        age:30
+      }
+      function getAge(country,height){
+        console.log(this.age);
+        console.log("I'm from "+country+" I'm "+height+" cm.")
+      }
+      //call()的意思指的是執行, 放進去的object決定this的內容
+      getAge.call(Johnny,"Taiwan","179");//你可以丟另一個parameter進去，記得要加雙引號! 
+      //call不用再用一個 variable去接
+      //function.call(Object, parameter1, parameter2); bind有一樣的parameter排列
+      
+      //apply和call其實相當類似，只是要帶進去的prarmeter要用一個[]包起來，如下:
+      getAge.apply(Johnny,["Taiwan",179]); //跟上面call有一樣的結果!
+    </script>
+  </body>
+</html>

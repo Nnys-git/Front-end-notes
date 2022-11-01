@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+let friends1 = ["Johane","Jasmin","Mary"];
+let friends2 = ["John","Tom","Mark"];
+//錯誤示範
+// let friends = friends1+friends2;
+// console.log(typeof friends); //array 直接用+試圖串接，這樣出來的結果會是string
+//正確方式
+let friends = friends1.concat(friends2);
+console.log(friends); //這麼一來就會串接成一個array了，要注意順序，寫前面的放前面
+</script>
+</body>
+</html>

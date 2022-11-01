@@ -1,0 +1,76 @@
+.list a:link{color:rgb(0, 255, 42) ;font-family: 'Times New Roman', Times, serif;}
+.list a:visited{color: rgb(255, 153, 0);}
+.list a:hover{font-size: 200%;}
+.list a:active{color:aquamarine;font-size:300%;}
+
+
+a:link 本身超連結的顏色
+a:viited 已點過的超連結
+a:active 點選下去時候的顏色
+
+改變li的樣子
+   list-style-type:none;
+    list-style-image: url("../圖/下載.jpg")
+    ;list-style-position: inside;
+
+
+     text-indent: 33px;
+            text-align: justify;
+            line-height: 1.8;
+
+ box-shadow: 5px 10px 6px rgb(0, 0, 0);
+ text-shadow: 5px 10px 6px rgb(0, 0, 0);
+        }
+
+
+內文寬度column-width: 250px;
+內文間距column-gap: 20px;
+內文分隔線樣式 column-rule: 2px dotted yellowgreen;
+
+     background-image: url(圖/red.png);
+            background-repeat: repeat;
+            background-size: 50% 50%;
+            background-attachment: fixed;
+
+
+
+ <footer>
+                <p>2014 All Rights Reserved Quality Art Technology CO. </p>
+        </footer>
+
+ <header></header>
+        <article>
+            <section></section>
+        </article>
+        <aside></aside>
+        <footer></footer>
+
+
+/* 应用于所有边 */
+margin: 1em;
+margin: -3px;
+
+/* 上边下边 | 左边右边 */
+margin: 5% auto;
+
+/* 上边 | 左边右边 | 下边 */
+margin: 1em auto 2em;
+
+/* 上边 | 右边 | 下边 | 左边 */
+margin: 2px 1em 0 auto;
+
+/* 全局值 */
+margin: inherit;
+margin: initial;
+margin: unset;
+
+  .container {
+            display: grid;
+            /* display設定為grid會讓該元素變為格線布局 */
+            grid-template-columns: minmax(140px, auto) 1.5fr 3fr 1.5fr 1fr;
+            /*repeat(重複幾個, 單位)*/
+            /* grid-template-columns 定義著你要幾行，你打幾個數字就有幾行*/
+            /* (可以px和fr混用 px可以固定某行寬度 fr(fraction)就是瀏覽器寬度扣除px之後剩下的等分)  */
+            grid-template-rows: 200px 100px 30px minmax(120px,auto) minmax(200px, auto);
+            /* minmax定義列高最小為200px, 最高隨瀏覽器大小自動*/
+        }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i = 0;
+        for (i=0;i<=10;i++){
+            if (i%2!=0){
+                // continue; 
+                // continue會讓程式回去讀第12行
+                // 在這裡其實不寫continue也會有一樣的結果! 
+                break;
+                // 但如果寫的是break就不一樣了，這代表只要有條件滿足就會停止迴圈
+                // 並進入else，印出i=0
+            } else {
+                console.log(i)
+            }
+        }
+
+    </script>
+</body>
+</html>

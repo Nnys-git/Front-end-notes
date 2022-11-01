@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本IF寫法</title>
+</head>
+<body>
+    <div id="money"></div>
+    <script>
+        // var a= window.prompt("請輸入你的月薪")
+        // 透過prompt可以跳出一個視窗讓使用者輸入，括弧內可輸入提示文字
+        // console.log(`哈哈小雞雞，你一個月也才${a}元喔`);
+        // document.getElementById("money").innerHTML=`哈哈小雞雞，你一個月也才${a}元喔`
+        // 簡單if寫法搭配prompt
+        var age = prompt("請輸入你的年齡")        
+        if (age<=10){
+            document.write("小屁孩")
+        } else if (age>10 && age<=40){
+            document.write("屁孩")
+        } else if (age>40 && age<=60){
+            document.write("老屁孩")
+        } else if (age>60){
+            document.write("資深老屁孩")
+        }
+
+    </script>
+</body>
+</html>

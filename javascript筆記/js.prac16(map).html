@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const map1 = new Map(); //新增一個map資料型別
+
+        map1.set('a', 1); //透過set方法新增map 必須是一個key : value的組合 (前後的型別都沒有限制)
+        map1.set('b', 2); //map與object的差別在於: object的key只能是String 
+        map1.set('c', 3); //object沒有index這種東西，map用來新增修改value比較有效率 (很明確找得到，cf:object要找很久很久)
+
+        console.log(map1.get('a')); //透過get方法抓出map的值
+        // expected output: 1
+
+        map1.set('a', 97);  //map值可以重複宣告，新的值取代舊的值
+
+        console.log(map1.get('a'));
+        // expected output: 97
+
+        console.log(map1.size); //size方法可以得知map有幾組資料 cf:object只能用手算
+        // expected output: 3
+
+        map1.delete('b');
+
+        console.log(map1.size);
+        // expected output: 2
+    </script>
+</body>
+
+</html>

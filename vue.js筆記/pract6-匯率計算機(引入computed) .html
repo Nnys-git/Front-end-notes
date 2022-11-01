@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匯率計算機</title>
+</head>
+<body>
+    computed會
+    <div id="app">
+        匯率轉換機<input type="text" v-model="twd"> 
+        <!-- v-model會將使用者輸入的訊息同步更新在data裡面 -->
+        <ul>
+            <!-- <li>美元:{{twd/29.945}}</li> -->
+            <!-- <li>日幣:{{twd*0.22}}</li> -->
+            <li>日幣:{{japan}}</li> 
+            <!-- 邏輯放在computed裡面去做 -->
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <script>
+        var app= new Vue({
+            el:'#app',
+            data:{
+                twd:""
+            },
+            // 別於{{twd*0.22}}把邏輯寫在html標籤中，在Vue物件裡再新增一個computed
+            // 裡面可以設定function，並且將對應的function名稱作為資料回傳值
+            computed:{ //這個computed中function啟動時機，一但data的值有做更新(用戶輸入)時!!
+                japan: function(){
+                    return this.twd*0.22
+                    //此處的return代表的是將回傳值回傳到{{japan}}
+                    //Vue中所指的this指的都是data , 所以這邊this.twd就是指使用者輸入的台幣數字
+                    //cf. computed、method
+                    //computed中的function無法攜帶參數進去，method可以
+                    //不確定每次都會更新，用computed
+                    //確定每次都會更新，用method
+                }
+            }
+        })
+    </script>
+</body>
+</html>

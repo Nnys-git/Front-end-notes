@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     //constructing object
+     let Johnny = {
+      name:"Johnny Lin",
+      age:30,
+      gender:"Male",
+      address:"Taipei, Taiwan",
+      height:178,
+      weight:80,
+      friends:{
+        fullName:"Tom Lin"
+      }
+     }
+
+     //destructing object
+    //  //傳統的物件分解靠下面的方式去分
+    //  let name = Johnny.name;
+    //  let gender = Johnny.gender;
+    //  let friendName =Johnny.friends.fullName;
+    //  //但是這樣的做法要是你要解構100次property的時候你會瘋掉
+
+    // 新的寫法let 後面放大括號{} 裡面放要抓的property name
+    // 後面等號寫上object名稱
+    let {name,gender} = Johnny;
+    // 如果你要抓下一層的property，object後掛上一層的property名.
+    let {fullName} = Johnny.friends;
+    console.log(name,gender,fullName);
+    console.log(name+"'s gender is "+ gender+".");
+    console.log(name+" has a friend,his name is "+fullName);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <!--Template HTML with SEO & Bootstarp-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Johnny Lin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="網頁簡短描述" />
+    <meta name="keywords" content="網頁關鍵字" />
+    <meta name="copyright" content="網頁版權" />
+    <meta name="distribution" content="網頁發佈地區" />
+    <meta name="language " content="網頁發佈語言" />
+    <title>範例頁面</title>
+  </head>
+  <body>
+    <script>
+  // Write a function called "isUpperCase" that checks if the first letter of the string is uppercase.
+      function isUpperCase(word){
+        if (word.length<=0){
+            document.write("Please input a word to varify Uppercase!");
+            return false;          
+        }
+        let u_input = word.slice(0,1); //也可以直接寫成word[0] 一樣會抓到第一個字母           
+        if(u_input==u_input.toUpperCase()){
+            return true;
+        } else {
+            return false;
+        }
+      }
+      console.log(isUpperCase("ABCD"));
+      console.log(isUpperCase(""));
+      console.log(isUpperCase("aBCD"));
+    </script>
+  </body>
+</html>

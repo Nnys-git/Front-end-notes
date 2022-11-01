@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <!--Template HTML with SEO & Bootstarp-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Johnny Lin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="網頁簡短描述" />
+    <meta name="keywords" content="網頁關鍵字" />
+    <meta name="copyright" content="網頁版權" />
+    <meta name="distribution" content="網頁發佈地區" />
+    <meta name="language " content="網頁發佈語言" />
+    <title>範例頁面</title>
+  </head>
+  <body>
+    <script>
+  // Write a function called "findSmallCount" that takes one array of integers and one integer as input, and returns an integer indicating how many elements in the array is smaller than the input integer.
+  function findSmallCount(arr,int){
+    //for arr  
+    let count = 0;
+    for (let i=0;i<arr.length;i++){
+      if(int > arr[i]){
+        count++;
+      } 
+    }
+    return count;
+    //for int
+  }
+  console.log(findSmallCount([1, 2, 3], 2));// returns 1
+  console.log(findSmallCount([1, 2, 3, 4, 5], 0)); // returns 0
+    </script>
+  </body>
+</html>

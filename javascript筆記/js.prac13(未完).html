@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資料表單</title>
+</head>
+
+<body>
+    <label>資料表單</label>
+    <div>
+        <label for="pwd">密碼</label>
+        <input type="text" id="pwd" value="" placeholder="請輸入密碼">
+        <div id="pwdtxt"></div>
+        <input type="button" value="送出" onclick="chkpwd()">
+    </div>
+    <script>
+        let chkpwd = function () {
+            var pwdcont = document.getElementById('pwd');
+            console.log(pwdcont); //這樣會抓到標籤本身
+            var pwdvalue = pwdcont.value
+            console.log(pwdvalue); //123
+            console.log(typeof pwdvalue); //string
+
+            if (pwdvalue == "") {//密碼不能為空
+                document.getElementById("pwdtxt").innerHTML = "密碼不得為空";
+            } else if (pwdvalue){
+                
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //function methods
+      //bind call apply
+
+      //function are object!
+      //function 也繼承object的method、property
+      function hello(){
+        console.log("hello!");
+      }
+      // console.log(hello);//只打function名稱會顯示function本人
+
+      let Johnny = {
+        name:"Johnny Lin",
+        age:30
+      }
+      function getAge(){
+        console.log(this);//window 因為當你都沒有任何綁定時this指的就是window
+        console.log(this.age);//window沒有age屬性，所以結果是undefined
+      }
+      // getAge();
+      //bind() call() apply()
+      //可以透過bind綁定this物件!
+      //apply跟call差不多，只是裡面塞的parameter要用[]包起來
+    
+      let getJohnnyAge = getAge.bind(Johnny); //有了.bind()之後，function中的this就會指向Johnny
+      //function.bind() returns a new function, we can use a variable to catch it!   
+      console.log(getJohnnyAge);//name屬性會多一個bound 
+      getJohnnyAge();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <!--Template HTML with SEO & Bootstarp-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Johnny Lin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="網頁簡短描述" />
+    <meta name="keywords" content="網頁關鍵字" />
+    <meta name="copyright" content="網頁版權" />
+    <meta name="distribution" content="網頁發佈地區" />
+    <meta name="language " content="網頁發佈語言" />
+    <title>範例頁面包含Bootstrap</title>
+
+  </head>
+  <body>
+    <h1 id="first">My first h1</h1>
+    <h1 class="second">My second h1</h1>
+    <p class="second">Second p</p>
+    <p class="second">Third p</p>
+    <script>
+    //querySelector()
+    let secondH1 = document.querySelector("h1.second");
+        // console.log(secondH1);
+    
+    let seconds = document.querySelectorAll(".second");
+    console.log(seconds[0]);
+
+    </script>
+  </body>
+</html>

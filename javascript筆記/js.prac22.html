@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <!--Template HTML with SEO & Bootstarp-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Johnny Lin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="網頁簡短描述" />
+    <meta name="keywords" content="網頁關鍵字" />
+    <meta name="copyright" content="網頁版權" />
+    <meta name="distribution" content="網頁發佈地區" />
+    <meta name="language " content="網頁發佈語言" />
+    <title>終極密碼</title>
+  </head>
+  <body>
+    <script>
+        let answer = Math.floor(Math.random()*100);
+        let n1 = 0;//記得設定上下限，最後再判別式中改變上下限
+        let n2 = 99;
+        while(true){ //記得無限迴圈用while(true)，不要用for(true)
+            let input = prompt("終極密碼開始，請輸入數字"+n1+"~"+n2+"之間");
+            console.log(typeof input);
+            
+            if(isNaN(input)){
+            alert("請輸入阿拉伯數字!");
+            continue;
+            } 
+            
+            if(input<n1 ||input>n2){
+            alert("請輸入一個數字介於0~99");
+            continue;
+            } 
+            
+            if(input==answer){
+                alert("The answer is "+answer);
+                alert("恭喜答對");
+                break;
+            } else if(input>answer){
+                n2=input;
+                continue;
+            } else if (input<answer){
+                n1=input;
+                continue;
+            }
+        }
+       
+    </script>
+  </body>
+</html>

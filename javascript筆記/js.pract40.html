@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+    //addEventListener 事件監聽 
+    //括弧內放入2個attribute ("事件",Callback function)
+    window.addEventListener("click", (e) =>{
+        console.log(typeof e); //這邊的e指的是click這個事件
+        //而透過typeof 更進一步的知道click是一個Object
+        //所有JS的事件都是一個OBJECT!!
+    })
+</script>
+</body>
+</html>

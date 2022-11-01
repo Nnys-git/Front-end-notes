@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+//sort()
+let fruits = ["Grapes", "Apple","Banana"];
+// console.log(fruits.sort()); //是按照第一個字母最陽春的去排列
+fruits.sort();//注意 sort()會改變你的array!! 
+console.log(fruits);
+
+//比較
+let name = "Johnny";
+name.toUpperCase(); //toUpperCase()不會改變原有的string
+console.log(name);
+
+let luckies = [15,1,12,17,3,99]; //an array of numbers => sort()
+luckies.sort(); //return by string comparision(按照第一個字母排)，這樣的排列不會是我們想要的
+console.log(typeof luckies); //object array本來就是一個物件
+console.log(luckies);
+// 所以再針對luckies的這種 number of array時，要再sort裡面再加個Callback function!
+let luckies2 = [15,1,12,17,3,99];
+
+luckies2.sort((a,b)=>{
+    return a-b; //這麼一來他就會按照我們所想的從小排到大
+    //return b-a <--會變成從大排到小
+});//裡面塞個Callback function 而且要有兩個parameter
+console.log(luckies2);
+
+
+/**
+ * arr.sort([compareFunction])
+ * compareFunction 選擇性
+指定一個函式來定義排序順序。假如省略此參數，陣列將根據各個元素轉為字串後的每一個字元之 Unicode 編碼位置值進行排序。
+*/
+let fruits2 = ["Grapes", "Apple","Watermelon"];
+//假如我們要對array中value長度來排序
+fruits2.sort((a,b)=>{
+    return a.length - b.length; //用.length就可以將字數小排到字數大
+    // 你想讓SORT按照什麼排列，就改它的CallBack function即可
+});
+console.log(fruits2);
+
+
+</script>
+</body>
+</html>

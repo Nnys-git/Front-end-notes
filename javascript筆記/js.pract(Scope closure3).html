@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let myName = "Johnny";
+
+      function sayHi() {
+        console.log(myName+ " says hi.");
+
+        function sayHi2() {
+          console.log(myName+ " says hi.");//Johnny
+          //同樣 執行到這邊sayHi2()找不到myName是什麼
+          //JS就會去定義sayHi2()的地方去找myName>>還是找不到myName
+          //JS就會在向外去找定義sayHi()的地方去找myName>>回傳Johnny
+        }
+
+        function sayHi3(){
+            let myName = "Mary";
+            sayHi2();
+        }
+        sayHi3();
+      }
+      sayHi();
+    </script>
+  </body>
+</html>

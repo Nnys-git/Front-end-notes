@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+// find(), filter() 裡面要放一個條件式! 
+const fruit =[
+{name:"apple",sweet:8.5,popularity:9},
+{name:"banana",sweet:6,popularity:7},
+{name:"mango",sweet:9,popularity:10},
+{name:"orange",sweet:7,popularity:9},
+];
+// find(), filter() 都會對object內的所有property去做執行，符合條件的回傳
+let result = fruit.find(fruit =>{
+    return fruit.sweet >8;
+});
+console.log(result);// find只會回傳符合條件的第一個
+//find()回傳的會是一個object!! 
+
+let result2 = fruit.filter(fruit =>{
+    return fruit.sweet >7;
+});
+console.log(result2);// find只會回傳符合條件的第一個
+//filter回傳的是Array of object ，但還是一個object喔!!!!
+
+let result3 = fruit.find(fruit =>{
+    return fruit.sweet >10;  //假設你設定一個不存在的條件
+});
+console.log(result3); //回傳的結果就會是一個undefined
+// filter你給他一個不可能的條件式，回傳的會是一個空的Array OBJECT
+</script>
+</body>
+</html>

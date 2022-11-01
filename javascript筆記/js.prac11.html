@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>區域變數、全域變數</title>
+</head>
+<body>
+    <script>
+        // a=100;
+        // function app(){
+        //     var a=10;
+        //     console.log(`寫在裡面的叫做區域變數，變數值a=${a}`) //a=10
+        //     console.log("區域變數因為有用var去做變數賦值，所以不會影響全域變數")
+        // }
+        // app();
+        // console.log(`寫在外面的叫做全域變數，變數值a=${a}`); //a=100
+        
+        
+        // 另一種情況
+        b=20;
+        function app2(){
+            b=200;
+            console.log(`這次寫在function中的b 沒有使用var去做變數賦值`)
+            console.log(`b賦值會直接影響到最近的同名變數，也就是Global的b`)
+            console.log(`區域變數b=${b}`) //b=200
+        }
+        app2();
+        console.log(`全域變數被function影響，值有所改變，b=${b}`)// b=200
+
+
+
+    </script>
+    
+</body>
+</html>

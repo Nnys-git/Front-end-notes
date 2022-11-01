@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+    //注意: localStorage以及sessionStorage都是一樣的method用法喔!!
+    //Local Storage、Session Storage are ojbject
+    //Both of them have methods 
+    //methods: setItem(key,value)、getItem(key)、removeItem(key)、clear()
+    //注意: key是不能重複的!! 
+        localStorage.setItem("name","Johnny");
+    //console.log(localStorage);//看見localStorage的方法1,但多數人不這麼做的
+    //方法2: 直接到瀏覽器F12(FIREFOX)，點選STORAGE儲存空間>點選LOCAL STORAGE本地儲存空間，你就會看到!
+    //方法2:  直接到瀏覽器F12(CHROME)，點選application>點選STORAGE>點選LOCAL STORAGE本地儲存空間，你就會看到!
+        localStorage.setItem("address","Hotel");
+        localStorage.setItem("car","HONDA"); 
+        //一旦你有對localStorage 宣告過key和value之後 他就會存在你的本地記憶體內，就算你註解掉還是會存在
+    let myAddress =localStorage.getItem("car");//所以我們這邊針對car這個key來做getItem搜尋的時候，就可以找到對應的value
+    console.log(myAddress);
+    localStorage.removeItem("address");//針對那個PAIR的KEY值去做刪除就可以連著VALUE一同刪掉
+    localStorage.clear();//使用clear method就能對本地的localStorage一次清空!
+</script>
+</body>
+</html>

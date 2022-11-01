@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Prototype 概念
+      function Person(name,age,height,weight){ 
+        this.name=name;
+        this.age=age;
+        this.height=height;
+        this.weight=weight;
+      }
+      //Prototype declaration 
+      //prototype is a simple reference to another object; 
+      //this object common properties and methods across all instances
+      //prototype是一個Object包含共用(常見)的properties & methods 
+      //語法: 建構子名稱.prototype.method名稱 = function()
+      Person.prototype.sayHi = function(){//你可以透過protype創造一個共用的method給大家繼承
+        console.log(this); //這邊的this就是指new出來的object
+        console.log(this.name+" says hi.");
+      }
+      //所有的新增物件可以自行定義他的不同method
+
+      let Johnny = new Person("Johnny Lin",30,176,80);
+      let Mike = new Person("Mike Lin",40,180,90);
+      //我們可以透過new不斷新增object，但是每new一次就占用一次空間，恐怕會拖垮記憶體
+      //所以我們要透過inheritance Prototype 對相同的動作只做一次占用記憶體，其他的Object就去使用他就好
+      //要Call protype的method 就直接new 物件名稱之後dot notation就可以
+      Johnny.sayHi();//Johnny Lin says hi.
+      Mike.sayHi();//Mike Lin says hi.
+
+
+      //prototype inheritance
+      // 為什麼我們可以直接對Johnny這個物件做sayHi()
+      // 因為Johnny這個物件從Person那邊繼承prototype!!!
+      // F12去​​找console.log(this);的時候會看到除了Object的property, method之外
+      // 還會有一行寫著prototype , 裡面就有寫道繼承的function 
+    </script>
+  </body>
+</html>

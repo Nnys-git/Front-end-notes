@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Johnny = {
+            name:"Johnny",
+            //這邊算是function declaration 雖然前面沒有那串function
+            greeting(){
+                console.log(this);
+                //經過console.log可以知道一般function declaration指的this就是包住它的那個物件
+                console.log("Hi my name is "+ this.name+ " .")
+            },
+            //arrow function 
+            walk : () =>{
+                console.log(this);
+                //arrow function中的this指的會是window object.
+                console.log(`${this.name} is walking on the street.`)
+            }
+
+        }
+        Johnny.greeting();
+        Johnny.walk();  //單純也可以使用arrow function來做object中的method宣告
+        //唯一不同的是，arrow function中的this指的是window object，不是指包住他的Johnny 物件!!
+    </script>
+</body>
+</html>

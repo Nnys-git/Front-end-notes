@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  OOP 物件導向觀念- Object- Constructor 建構子
+      //  用來一口氣製作大量相似的Object使用 【會員資料...等等】
+      //  通常是大寫英文字母開頭(Starts with uppercase letter)
+      //  使用new 這個keyword : 用來創造一個empty opject
+
+      //Constructor declaration 
+      function Person(name,age,height,weight){ //parameter放入項目
+        console.log(this);
+        //在建構子裡面去印出this 會印出一個empty object
+        //在透過下面四行進行這個empty object的屬性設定
+        this.name=name;
+        this.age=age;
+        this.height=height;
+        this.weight=weight;
+        //除了property的定義，當然也可以定義method，語法如下
+        this.sayHi = function(){
+          console.log(this.name+" says hi.");//【注意:這邊的this.name就已經是使用者輸入的資料了】
+        }
+      }
+
+      let Johnny = new Person("Johnny Lin",30,176,80);
+      //new 會創造一個empty object
+      let Mike = new Person("Milk Lin",40,180,90);
+      //透過上一行就可以一次新增很多個object
+      console.log(Johnny);
+      console.log(Mike);
+
+      Johnny.sayHi();
+
+    </script>
+  </body>
+</html>

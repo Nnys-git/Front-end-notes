@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        {{mes}}}
+        <ul>
+            <li v-for="item in colors">
+                {{item}}
+            </li>
+            <input type="checkbox" v-model="check">
+            <!-- 有夠神奇, v-model可以做為開關似的東西，可以將data中的值更改為false -->
+            <!-- 將相同名稱的data key值對應到v-if 以及v-model可以做到開關顯示的功能 -->
+            <li v-if="check"
+            v-for="item in home">
+                {{item}}
+                <!-- 單指item他會只抓到整個json -->
+                {{item[1]}}
+                <!-- 指定的東西是個JSON型別的東西她會不顯示 -->
+                {{item.father}}
+                <!-- 要抓下一層的資料，要再輸入key讓他去找 -->
+                {{item.father[0]}}
+                <!-- 你把這個元素再以index去深入指定時，他會直接幫你切片文字 -->
+                {{item.father[1]}}
+            </li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <script>
+        var neww = new Vue({
+            el:'.app',
+            data:{
+                mes:'認得出中文嗎??? 誒幹可以!!',
+                //記得你data裡面要輸入的資料型別是串列的時候, 串列的內容值務必要單,雙引號包覆
+                colors:['red', 'yellow', 'black'],
+                //要輸入有兩層分類的複雜資料時，可以用類似JSON的資料型別方式(一個KEY搭配一個VALUE, 並且大括弧包覆)
+                home:[{'father':'Tom'},{'father':'John'}],
+                check:true
+            }
+        })
+    </script>
+</body>
+</html>

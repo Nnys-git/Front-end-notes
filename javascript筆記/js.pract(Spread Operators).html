@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Spread Operators 【...】  >Rest Parameters
+      //正常來說在declare一個function的時候，會先想好要幾個parameter(參數)去帶在方程式中
+
+      //一般要尋找Array中數字的大小，parameter(參數)只設一個，如下面的arr
+      /**
+function checkBiggest(arr){
+    let biggest = -Infinity;
+    for (let i=0; i< arr.length ; i++){
+        if (arr[i] > biggest){
+            biggest = arr[i];
+        }
+    }
+    return biggest;
+}
+*/
+      // console.log(checkBiggest([-2,4,5,10]));
+      // 但是這樣只能放入一個arr作為parameter(參數)
+      // 套入Spread Operators 【...】加在PARAMETER前面，就可以一次輸入多個數值進去
+      function checkBiggest(...arr) {
+        console.log(arr); //加上Spread Operators之後，你輸入的多個parameter會轉為array
+        let biggest = -Infinity;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > biggest) {
+            biggest = arr[i];
+          }
+        }
+        return biggest;
+      }
+      console.log(checkBiggest(-2, 5, 16, 100)); //如此一來就可以達到Math.max()一樣效果
+      console.log(Math.max(-2, 5, 16, 100));
+
+      //Also Spread operator can concate array
+      let friends1 = ["Johane", "Jasmin", "Mary"];
+      let friends2 = ["John", "Tom", "Mark"];
+      let friends = [...friends1, ...friends2];
+      console.log(friends); //這麼一來就會串接成一個array了，要注意順序，寫前面的放前面
+    </script>
+  </body>
+</html>

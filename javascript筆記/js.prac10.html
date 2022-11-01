@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 一般函數:
+        // function 函數名稱(參數1,參數2,...parameter){return: 如果需要回傳值的時候，再加上return}
+        // var x=prompt('請輸入a值');
+        // var y=prompt('請輸入b值');
+        // a=parseInt(x);
+        // b=parseInt(y);
+        // 寫法1:
+        // function app(a,b){
+            // return (a+b);
+        // }
+        // console.log(app(a,b))
+        // 寫法2:
+        // function app(a,b){
+        //     document.write(`a+b=${a+b}`);
+        // }  
+        // app(a,b);  //這邊你必須要針對這個function實作，才會啟動這個function
+
+        // 匿名函數:
+        // 少掉函數名稱，用一個變數去讓他賦值(ap) ,之後該函樹就可以直接用ap去做引數(param)的帶入
+        // ex:
+        // var a=2;
+        // var b=10;
+        // var ap=function(a,b){
+        //     document.write(a*b);
+        // }
+        // ap(a,b); //記得還是要實作!
+
+        // 箭頭函數:
+        // 與匿名函數一樣要用一個變數去讓他賦值，連function這個保留字都免了，引數順序調換到前面
+        // ex:
+        var a=2;
+        var b=5;
+        var f=(a,b)=>{
+            document.write(a*b);
+        }
+        f(a,b);
+        
+        //如果函數內容(stament) {}內的東西只有一行的時候，連{}可以省略
+        var g=(a,b)=>console.log(a+b);
+        g(a,b);//你寫函數名稱加上() 就是呼叫的意思
+
+        console.log(`${g}`); //你單純寫函數名稱or變數賦值的名稱，他會顯示函數的內容
+    </script>
+</body>
+</html>

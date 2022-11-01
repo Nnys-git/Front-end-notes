@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">content</div>
+    <script>
+        let a = document.getElementById("demo")
+        //注意: 使用let跟var都可以宣告變數，但是let宣告的變數不能重複宣告
+        //var宣告過的變數 let重複宣告會跳錯--> Syntax error: has been declined
+        //Syntax error: 語法錯誤: 代表語法錯誤，是自己打錯或判斷錯
+        a.innerHTML="i changed content"
+
+
+        if(true){
+            var i = 100;
+            console.log(i);
+        }
+        console.log(i);
+
+        function f(){
+            let a2= 1000;
+            console.log(a2);
+        }
+        console.log(a2);//這邊就會跳 Uncaught ReferenceError: a2 is not defined
+        //ReferenceError: 變數值不存在or這個變數本身就不存在 
+        //在函數的區域範圍中，使用var 做變數宣告時，會被視為全域，函數外面也可以用得到
+        //但是不一樣的是，使用let做變數宣告的時候，區域變數外就吃不到!!  要注意!!
+        //https://ithelp.ithome.com.tw/articles/10204951
+        //Hoisting的解說
+        //總而言之，var宣告時該變數會有hoising(置頂)效果，你可以先宣告，後寫他要幹嘛
+        //但是hoisting只負責製頂"宣告"的部分，不負責"初始化"的部分 var a=100 (等號是關鍵); 
+        // https://blog.csdn.net/m0_49016709/article/details/107200003
+        //常見error解釋
+
+    </script>
+</body>
+</html>

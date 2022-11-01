@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI比較</title>
+</head>
+<body>
+    <div id="app">
+        路人A體脂<input type="text" v-model="a"><br>
+        路人B體脂<input type="text" v-model="b">
+        <ul>
+            <li>
+                誰的體脂較重?{{heavycheck}}
+            </li>
+            <li>
+                路人A與國人平均體脂差異: {{vs}} 
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                a:0,
+                b:0,
+                ave:20
+            },
+            computed:{ //這邊選用computed 是因為它具有資料暫存的效果，只有資料更動時才會重新渲染
+                //反之使用method 每次更動(不管值是否相同)都會做重新渲染，效能較差
+                heavycheck:function(){
+                    if(this.a>this.b){
+                        return 'a比較重';
+                    }else if(this.a<this.b){
+                        return 'b比較重';
+                    }else{
+                        return '一樣重';
+                    }
+                },
+                vs: function(){
+                    return (this.a-this.ave);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

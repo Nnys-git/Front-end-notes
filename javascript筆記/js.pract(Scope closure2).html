@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * scope closure & chain
+       * 不論如何JS在執行程式碼第一件事情在先進行creation phase(載入function declaration & varariables記入記憶體)
+       * 再由上至下逐行執行!!! (就算你是function內的function也是一樣的原則!!)
+       * 如果function中有variables是"執行function"中沒有定義到的
+       * JS會尋找創造這個"執行function"的那一層，該層當中有沒有定義function的這個variable
+       * 再去執行*/
+
+      let myName = "Johnny";
+
+      function sayHi() {
+        let myName = "Tom";
+        console.log(myName+ " says hi.");
+
+        function sayHi2() {
+          console.log(myName+ " says hi.");//Tom
+          //同樣 執行到這邊sayHi2()找不到myName是什麼
+          //JS就會去定義sayHi2()的地方去找myName>>就會找到Tom
+        }
+
+        function sayHi3(){
+            let myName = "Mary";
+            sayHi2();
+        }
+        sayHi3();
+      }
+      sayHi();
+    </script>
+  </body>
+</html>

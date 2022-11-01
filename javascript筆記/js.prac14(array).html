@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 資料結構 -->
+    <!-- js的資料結構常見的有: 
+    Array(陣列)、Set(集合)、Map -->
+    <script>
+        // 最基本的array:
+        // var arr1 = []; //空陣列
+        // var arr2 = [1,2,3]; //基本陣列，內元素是數字
+        // document.write(`${arr2}<br>`); //1,2,3
+        // document.write(typeof arr2); //Object 是個物件
+
+        // 也可以這樣設定一個陣列物件，但是這樣效能較差不建議
+        // var arr3 = new Array(); //空陣列
+        // var arr4 = new Array(1,2,3);  //基本陣列
+        var names=['Johnny','John','Amy'];
+        console.log(names);//印出index , value
+        // console.log(names.values); //只印value
+        names.push('Aimer','Claire'); //push 可以在陣列後方加入值
+        // var a = names.pop();//pop(把陣列最後的值刪掉，然後回傳那個被刪的值)
+        // console.log(a);
+        // var b = names.shift();//shift(把陣列最前的值刪掉，然後回傳那個被刪的值)
+        // console.log(b);
+        var names2=['David','Eason'];
+        var c = names.concat(names2);//concat(前面接原陣列，()內放要加上的陣列內容)
+        console.log(c);
+    </script>
+</body>
+</html>

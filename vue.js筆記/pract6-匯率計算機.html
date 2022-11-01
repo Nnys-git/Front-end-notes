@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匯率計算機</title>
+</head>
+<body>
+    <div id="app">
+        匯率轉換機<input type="text" v-model="twd"> 
+        <!-- v-model會將使用者輸入的訊息同步更新在data裡面 -->
+        <ul>
+            <li>美元:{{twd/29.945}}</li>
+            <li>日幣:{{twd*0.22}}</li>
+            <!-- 把邏輯寫在html標籤裡面 -->
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <script>
+        var app= new Vue({
+            el:'#app',
+            data:{
+                twd:"",
+            }
+        })
+    </script>
+</body>
+</html>

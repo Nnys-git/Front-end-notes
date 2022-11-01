@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="first">My first h1</h1>
+    <h1 class="second">My second h1</h1>
+    <p class="second">Second p</p>
+    <p class="second">Third p</p>
+    <script>
+ //array
+let lucky = [15,7,23,14]
+ //HTMLCollection
+let secondsElement = document.getElementsByClassName(".second");
+console.log(secondsElement);  //會出現它是一個HTMLCollection
+//NodeList
+let secondQuery = document.querySelectorAll(".second");
+console.log(secondQuery);  //會出現它是一個NodeList
+secondQuery.forEach((a)=>{
+    console.warn(a);
+    //這邊打的a指的就是指透過forEach將querySelectorAll所選到的每一個物件去做遍歷(有點像是array去遍歷)
+    //其中將a這個parameter印出還就會是所有的tag element 
+});
+ /**
+  * HTMLCollection、NodeList
+  * 都有length property
+  * 都有index
+  * 
+  * 
+Why we prefer to use querySelectorAll()?
+beacuse querySelectorAll() will return a NodeList, that could let you use forEach method to control your data.
+cf. getElementsByClassName series will return a HTMLCollection 
+but forEach method is not allow to use in HTMLCollection 
+
+that's why we use querySelector  not getElementById 
+  */
+
+ </script>
+</body>
+</html>

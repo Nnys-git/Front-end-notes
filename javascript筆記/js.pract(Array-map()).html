@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+let lang = ["Java","C++","Python","JS"];
+//map() parameter必須是一個Callback function【注意，一定要return一個東西才行!!】
+let upperLanguages = lang.map((i)=>{
+    return i.toUpperCase(); //會return一個新的array 
+})
+console.log(upperLanguages);//會生成一個value相同，但是全部改成大寫的array! 
+
+const fruit =[
+{name:"apple",sweet:8.5,popularity:9},
+{name:"banana",sweet:6,popularity:7},
+{name:"mango",sweet:9,popularity:10},
+{name:"orange",sweet:7,popularity:9},
+];
+// map()必須用一個變數接他
+let newFruit = fruit.map((i)=>{
+    return i.sweet;
+});
+console.log(newFruit);
+
+</script>
+</body>
+</html>

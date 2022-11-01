@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 資料型別 -->
+    <script>
+        var a=10;
+        console.log(`a=${a},typeof a is ${typeof(a)}`) //Number
+        // 可得知a是一個number(JS不像JAVA一堆int double long...)
+        // 可以透過typeof來得知該變數的資料型別 一般的變數"宣告時"不會有明確的資料型別
+        // 只有在你assign value(賦值)的時候才會有明確型別
+        // ex: a="abc" <--這個等號就代表賦值，賦值的型別為String
+        // ex: a=200 <--等號賦不同的值，a的型別會從剛剛的String變為
+        a="abc"
+        console.log(`a=${a},typeof a is ${typeof(a)}`) //String
+
+        a=true;
+        console.log(`a=${a},typeof a is ${typeof(a)}`) //Boolean
+        
+        b=a+1;//加入運算子運算時，boolean的true被視為1(Number); false會被視為0
+        console.log(`a=${b},typeof a is ${typeof(b)}`) //Number 
+
+        //除了0、NaN、""、null、undefined會被視為false，其他都視為true
+        // 但還是會有一些些例外
+        c=NaN;
+        console.log(`c=${c},typeof c is ${typeof(c)}`) //單純NaN會被視為false -->型別為Number
+        d=c+1;
+        console.log(`d=${d},typeof d is ${typeof(d)}`) 
+        
+        e=undefined;
+        console.log(`e=${e},typeof e is ${typeof(e)}`) //如果把e賦值為undefined -->型別為undefined
+        f=e+1;
+        console.log(`f=${f},typeof f is ${typeof(f)}`) //加減運算的時候型別會被視為Number -->但是本身變數值將會是NaN
+
+        g=null; //如果是放""空字串，他會被視為一個String
+        console.log(`g=${g},typeof g is ${typeof(g)}`) //如果把g賦值為null -->型別為object (空物件)
+        h=g+1;
+        console.log(`h=${h},typeof h is ${typeof(h)}`) //運算子加入時本身變數值將會是0 -->型別是number
+    </script>
+</body>
+</html>

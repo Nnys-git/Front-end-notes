@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //prototypeInheritance
+      function Person(name,age,height,weight){
+        this.name = name,
+        this.age = age,
+        this.height = height,
+        this.weight = weight
+      }
+
+      Person.prototype.sayHi = function(){
+        console.log(this.name+" says Hi.");
+      }
+
+      Person.prototype.intro = function(){
+        console.log("Hi, my name is "+this.name);
+      }
+
+      function Student(name,age,height,weight,major,grade){
+          //這邊的this 指的是Student
+          Person.call(this,name,age,height,weight)//有多個相同property時，可以使用繼承方式減少重複
+          //這邊開始就可以再新增Student自己的property 【多形概念】
+          this.major = major;
+          this.grade = grade;
+      }
+      //let Johnny = new Student("Johnny Lin",30,176,80,"國語",2);
+      // Johnny.sayHi();//Uncaught TypeError: Johnny.sayHi is not a function
+      //因為上面Person.call()繼承的時候沒有把prototype的sayHi以及intro繼承到
+      //要解決prototype沒有繼承到的問題
+      Student.prototype = Object.create(Person.prototype);//這條必須寫在new一個物件之前先寫，否則一樣繼承不到Person的prototype
+      //透過Object.create(Person.prototype)可以將Person的prototype.sayHi以及intro一並繼承到
+      let Johnny = new Student("Johnny Lin",30,176,80,"國語",2);
+      console.log(Johnny);
+      Johnny.sayHi(); //這個時候就可以使用
+      //原理:new出來的Johnny本身並沒有sayHi()以及intro()，這時候JS就會從PROTOTYPE繼承那邊一層一層向外找直到找到sayHi()以及intro()
+    </script>
+  </body>
+</html>

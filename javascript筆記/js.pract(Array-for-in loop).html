@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+//for in loop 用來增加code可閱讀性
+//可以用在array上，"也可以用在object上"!!!
+//你單log迭代的variables會回傳給你他的property names
+//ex: console.log(i); //出現name, age
+//你要取得property value還是要透過object[variables]
+//ex:　console.log(Johnny[i]);
+let Johnny ={
+    name: "Johnny Lin",
+    age:30
+}
+for (let i in Johnny){ //loop through object 
+    console.log(i); //出現name, age
+    console.log(Johnny[i]);//出現key對應的value
+}
+
+let arr = [10,20,30];
+
+for(let i in arr){//loop through array 
+    console.log(i);//這邊回傳的是array的property 0,1,2 【index 編號】
+    console.log(arr[i]);//回傳10,20,30 
+}
+
+</script>
+</body>
+</html>

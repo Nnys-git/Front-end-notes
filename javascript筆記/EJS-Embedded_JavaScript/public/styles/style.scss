@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: gray;
+    color:azure;
+}
+
+table,tr,th,td{
+    border-collapse: collapse;
+    border:2px solid white;
+}
+
+th,td {
+    text-align: center;
+}
+
+tr,td,th{
+    padding: 0.3rem 0.3rem;
+}

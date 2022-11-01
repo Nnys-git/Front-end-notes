@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Liz ={
+            name:"Liz Wang",
+            talk(){
+                console.log("Liz say Hi");
+            }
+        }
+
+        let Johnny = {
+            //property declare
+            friend:Liz,
+            name: 'Johnny Lin',
+            //method declare
+            walk(){
+                console.log("Johnny is walking.");
+            }
+        }
+
+        Johnny.friend.talk();
+        //OOP的概念就是A物件可以是B物件的屬性
+        //也就是說我們可以呼叫B物件的屬性>> 藉此指向A物件(導向)
+        //導向A物件之後就可以使用A物件的METHOD!! 
+    </script>
+</body>
+</html>

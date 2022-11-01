@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button onclick="stop()">Stop!</button>
+<body>
+    <script>
+        function sayHi(){
+            console.log("Hi!<br>");
+        }
+        //setInterval中 sayHi不用加括號，寫method名稱他就知道
+        
+        let a =  window.setInterval(sayHi,1);
+
+        function stop(){
+            clearInterval(a);
+            //clearInterval再用的時候要將setInterval放進一個變數中!
+        }
+    </script>
+</body>
+</html>

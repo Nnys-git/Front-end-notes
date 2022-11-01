@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //prototype inheritance
+      let arr = [15,22,9];
+      arr.push(999);
+      console.log(arr);
+      // 為什麼我們可以直接對arr這個array做push()
+      // 因為arr這個array從Array.prototype那邊繼承了push()這個method
+      // 在點開來看又會看到這個Array又是從Object.prototype繼承一堆method
+      // 這就是prototype inheritance
+
+      // 既然primitive data types 沒有properties and method，
+      // 我們為什麼還是可以對這些data使用他們的method和property呢?    因為JS有一個"Coercion" (強迫) 
+      // coericion(強迫)的真正概念
+
+      // 創造string的方式
+      let name = "Johnny Lin";
+      //他會在你不知道的地方執行下面這行
+      //myName = new String("Johnny Lin")  <--- coericion(強迫)
+      //完成目的之後會自行刪除釋放記憶體
+      console.log(name);//一樣製作出一個string
+      
+      // 創造string的方式2(透過JS內建的CONSTRUCTOR)
+      let name2 = new String("Johnny Lin")//new String這個動作也是使用constructor(JS內建)! 
+      console.log(name2);//一樣製作出一個string，較佔記憶體空間
+      //但是這樣會有一個壞處，他會同樣繼承OBJECT給他的很多很多METHOD,PROPERTY
+      //換句話說，很浪費記憶體!
+
+      //同理，製作Array也是一樣的道理
+      let arr2 = [3,56,99];
+      console.log(arr2);//一樣製作出一個array
+
+      let arr3 = new Array(3,56,99); //使用JS內建的Array constructor! 
+      console.log(arr3);//一樣製作出一個array
+    </script>
+  </body>
+</html>
